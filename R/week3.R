@@ -13,3 +13,8 @@ clean_df$timeSpent <- difftime(clean_df[,2],clean_df[,1], units = "secs")
 hist(as.numeric(clean_df$timeSpent))
 frequency_tables_list <- lapply(clean_df[,5:14], table)
 lapply(frequency_tables_list,barplot)
+nrow(clean_df[clean_df[,5]>=clean_df[,6] & clean_df[,6] != clean_df[,7],])
+for (i in frequency_tables_list) {
+  barplot(i) }
+
+
